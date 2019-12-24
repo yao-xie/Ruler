@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SimpleRulerView">
+        <attr name="r_bgColor" format="reference|color" />
+        <attr name="r_pointerColor" format="reference|color" />
+        <attr name="r_pointerLength" format="reference|dimension" />
+        <attr name="r_pointerWidth" format="reference|dimension" />
+        <attr name="r_textColor" format="reference|color" />
+        <attr name="r_textSize" format="reference|dimension" />
+        <attr name="r_shortIndicatorColor" format="reference|color" />
+        <attr name="r_shortIndicatorWidth" format="reference|dimension" />
+        <attr name="r_shortIndicatorLenth" format="reference|dimension" />
+        <attr name="r_longIndicatorColor" format="reference|color" />
+        <attr name="r_longIndicatorWidth" format="reference|dimension" />
+        <attr name="r_longindicatorLenth" format="reference|dimension" />
+    </declare-styleable>
+
+</resources>

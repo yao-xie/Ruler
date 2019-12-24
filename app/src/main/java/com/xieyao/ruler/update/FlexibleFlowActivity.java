@@ -1,7 +1,7 @@
-package com.xieyao.inappupdatedemo;
+package com.xieyao.ruler.update;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.Activity;
+
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
@@ -21,8 +21,8 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnFailureListener;
 import com.google.android.play.core.tasks.OnSuccessListener;
-
-import android.os.Bundle;
+import com.xieyao.ruler.BuildConfig;
+import com.xieyao.ruler.R;
 
 public class FlexibleFlowActivity extends AppCompatActivity implements InstallStateUpdatedListener {
 

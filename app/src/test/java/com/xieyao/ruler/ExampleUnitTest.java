@@ -1,4 +1,4 @@
-package com.xieyao.inappupdatedemo;
+package com.xieyao.ruler;
 
 import org.junit.Test;
 
