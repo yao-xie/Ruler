@@ -13,11 +13,10 @@
         <activity android:name="com.xieyao.ruler.update.FlexibleFlowActivity" />
         <activity
             android:name="com.xieyao.ruler.MainActivity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="sensorLandscape">
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -14,9 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        SimpleRulerView mRuleView = findViewById(R.id.ruler_view);
         MainViewModel model = ViewModelProviders.of(this).get(MainViewModel.class);
-        model.setup(mRuleView);
+        model.setup(this);
         binding.setViewModel(model);
     }
 }
