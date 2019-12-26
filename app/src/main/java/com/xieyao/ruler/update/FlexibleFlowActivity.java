@@ -1,7 +1,5 @@
 package com.xieyao.ruler.update;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
@@ -9,7 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-//import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
@@ -23,6 +23,8 @@ import com.google.android.play.core.tasks.OnFailureListener;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.xieyao.ruler.BuildConfig;
 import com.xieyao.ruler.R;
+
+//import com.google.android.material.snackbar.Snackbar;
 
 public class FlexibleFlowActivity extends AppCompatActivity implements InstallStateUpdatedListener {
 

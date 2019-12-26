@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -34,7 +35,7 @@ public class SimpleRulerView extends View {
 
     private int mUinit = UNITS_CENTIMETER;
 
-    private Paint mIndicatorPaint, mPointerPaint;
+    private Paint mIndicatorPaint, mPointerPaint, mTextBgPaint;
     private TextPaint mTextPaint;
 
     private float gap;
@@ -45,6 +46,8 @@ public class SimpleRulerView extends View {
     private float longIndicatorWidth, longIndicatorLength;
     private int width, height;
     private float touchX, touchY;
+
+    private Callback mCallback;
 
     public SimpleRulerView(Context context) {
         this(context, null, 0);
@@ -95,6 +98,10 @@ public class SimpleRulerView extends View {
         return true;
     }
 
+    public void setCallback(Callback callback) {
+        this.mCallback = callback;
+    }
+
     private void init(Context context, AttributeSet attrs) {
         initAttrs(context, attrs);
         initPaints();
@@ -141,6 +148,10 @@ public class SimpleRulerView extends View {
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setTextSize(textSize);
         mTextPaint.setColor(textColor);
+
+        mTextBgPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mTextBgPaint.setStyle(Paint.Style.FILL);
+        mTextBgPaint.setColor(bgColor);
     }
 
     private void setUnit(int unit) {
@@ -200,10 +211,17 @@ public class SimpleRulerView extends View {
             distance.append(mUinit == UNITS_INCHES ? "Inches" : "CM");
             String distanceStr = distance.toString();
             float textWidth = mTextPaint.measureText(distanceStr);
-            if (touchY > height / 2) {//draw text below
-                canvas.drawText(distanceStr, touchX - textWidth / 2, height / 2, mTextPaint);
-            } else {//draw text above
-
+            Paint.FontMetrics fm = mTextPaint.getFontMetrics();
+            float textHeight = fm.bottom - fm.top;
+            if (touchY > height / 2) { //draw text below
+                canvas.drawRect(touchX - textWidth / 2, height * 2 / 3 - textHeight * 0.67f, touchX + textWidth / 2, height * 2 / 3 + textHeight * 0.33f, mTextBgPaint);
+                canvas.drawText(distanceStr, touchX - textWidth / 2, height * 2 / 3, mTextPaint);
+            } else { //draw text above
+                canvas.drawRect(touchX - textWidth / 2, height / 3 - textHeight * 0.67f, touchX + textWidth / 2, height / 3 + textHeight * 0.33f, mTextBgPaint);
+                canvas.drawText(distanceStr, touchX - textWidth / 2, height / 3, mTextPaint);
+            }
+            if ("4.60 Inches".equals(distanceStr)) {
+                mCallback.onShowUpdateButton();
             }
         }
     }
@@ -229,5 +247,11 @@ public class SimpleRulerView extends View {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, String.format("xieyao@" + format, args));
         }
+    }
+
+    public interface Callback {
+
+        void onShowUpdateButton();
+
     }
 }
