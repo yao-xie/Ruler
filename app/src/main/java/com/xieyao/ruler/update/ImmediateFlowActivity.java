@@ -39,7 +39,7 @@ public class ImmediateFlowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_immediate_flow);
 
         // Create instance of the manager.
-        appUpdateManager = AppUpdateManagerFactory.create(this);
+        appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
 
         appUpdateInfoText = findViewById(R.id.app_update_info_text);
         logText = findViewById(R.id.log_text);

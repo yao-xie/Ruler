@@ -48,7 +48,7 @@ public class FlexibleFlowActivity extends AppCompatActivity implements InstallSt
         setContentView(R.layout.activity_flexible_flow);
 
         // Create instance of the manager.
-        appUpdateManager = AppUpdateManagerFactory.create(this);
+        appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
 
         appUpdateInfoText = findViewById(R.id.app_update_info_text);
         logText = findViewById(R.id.log_text);

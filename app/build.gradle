@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 29
@@ -8,8 +9,8 @@ android {
         applicationId "com.xieyao.inappupdatedemo"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -78,5 +79,10 @@ dependencies {
     implementation 'com.google.android.play:core:1.6.4'
 
     //Firebase
-    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    // (Recommended) Add the Google Analytics dependency.
+    implementation 'com.google.firebase:firebase-analytics:17.2.1'
+    // Add the Firebase Crashlytics dependency.
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    // Add the Crashlytics NDK dependency
+    implementation 'com.crashlytics.sdk.android:crashlytics-ndk:2.1.1'
 }

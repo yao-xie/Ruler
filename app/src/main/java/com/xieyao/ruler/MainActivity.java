@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.xieyao.ruler.widget.SimpleRulerView;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,4 +16,5 @@ public class MainActivity extends AppCompatActivity {
         model.setup(this);
         binding.setViewModel(model);
     }
+
 }

@@ -9,11 +9,14 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.crashlytics.android.Crashlytics;
 import com.xieyao.ruler.update.FlexibleFlowActivity;
 import com.xieyao.ruler.update.ImmediateFlowActivity;
 import com.xieyao.ruler.widget.SimpleRulerView;
 
 import java.lang.ref.WeakReference;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainViewModel extends ViewModel {
 
@@ -65,6 +68,13 @@ public class MainViewModel extends ViewModel {
     public SimpleRulerView.Callback mCallback = new SimpleRulerView.Callback() {
         @Override
         public void onShowUpdateButton() {
+            //Force a fatal crash
+//            Crashlytics.getInstance().crash();
+            //Force a non-fatal exception
+//            Date curDateTime = new Date(System.currentTimeMillis());
+//            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+//            Crashlytics.logException(new Exception("Test@" + formatter.format(curDateTime)));
+
             if (++mShowUpdateCount >= 4) {
                 if (null != mImmediateUpdateBtn && mImmediateUpdateBtn.getVisibility() != View.VISIBLE) {
                     mImmediateUpdateBtn.setVisibility(View.VISIBLE);
