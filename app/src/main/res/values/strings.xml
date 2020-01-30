@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InAppUpdateDemo</string>
+    <string name="app_name">Ruler</string>
 
     <!--fcm demo-->
     <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
