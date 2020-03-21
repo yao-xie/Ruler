@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.xieyao.ruler.MainViewModel" />
+            type="com.xieyao.inappupdatedemo.MainViewModel" />
 
     </data>
 
@@ -18,7 +18,7 @@
         android:background="@android:color/black"
         android:orientation="vertical">
 
-        <com.xieyao.ruler.widget.SimpleRulerView
+        <com.xieyao.inappupdatedemo.widget.SimpleRulerView
             android:id="@+id/ruler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

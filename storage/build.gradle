@@ -1,0 +1,49 @@
+apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 10
+        versionName "1.6.2"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debugR8 {
+            initWith(debug)
+            proguardFiles 'proguard-rules.pro'
+        }
+
+        release {
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "codeLoading"
+
+    productFlavors {
+        reflect {
+            dimension "codeLoading"
+        }
+
+        serviceLoader {
+            dimension "codeLoading"
+        }
+
+        dagger {
+            dimension "codeLoading"
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+    kapt 'com.google.dagger:dagger-compiler:2.16'
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xieyao.ruler">
+    package="com.xieyao.inappupdatedemo">
 
     <application
         android:allowBackup="true"
@@ -26,10 +26,10 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
         <!-- [END fcm_default_channel] -->
-        <activity android:name="com.xieyao.ruler.update.ImmediateFlowActivity"></activity>
-        <activity android:name="com.xieyao.ruler.update.FlexibleFlowActivity" />
+        <activity android:name="com.xieyao.inappupdatedemo.update.ImmediateFlowActivity"></activity>
+        <activity android:name="com.xieyao.inappupdatedemo.update.FlexibleFlowActivity" />
         <activity
-            android:name="com.xieyao.ruler.MainActivity"
+            android:name="com.xieyao.inappupdatedemo.MainActivity"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name="com.xieyao.ruler.fcm.MyFirebaseMessagingService"
+            android:name="com.xieyao.inappupdatedemo.fcm.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

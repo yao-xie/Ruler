@@ -90,3 +90,7 @@ lint/tmp/
 # lint/reports/
 
 google-services.json
+
+**/.cxx
+output.json
+private_key.pepk
