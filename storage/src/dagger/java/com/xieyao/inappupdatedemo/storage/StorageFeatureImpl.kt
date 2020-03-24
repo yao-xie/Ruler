@@ -14,10 +14,12 @@
  * limitations under the License.
  *
  */
-package com.xieyao.inappupdatedemo
+package com.xieyao.inappupdatedemo.storage
 
 import android.content.SharedPreferences
-import com.xieyao.inappupdatedemo.di.DaggerStorageComponent
+import com.xieyao.inappupdatedemo.Logger
+import com.xieyao.inappupdatedemo.StorageFeature
+import com.xieyao.inappupdatedemo.storage.DaggerStorageComponent
 import javax.inject.Inject
 import javax.inject.Singleton
 

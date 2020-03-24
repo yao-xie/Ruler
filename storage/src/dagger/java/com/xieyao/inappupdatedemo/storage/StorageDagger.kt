@@ -14,12 +14,11 @@
  * limitations under the License.
  *
  */
-package com.xieyao.inappupdatedemo.di
+package com.xieyao.inappupdatedemo.storage
 
 import android.content.Context
 import android.preference.PreferenceManager
 import com.xieyao.inappupdatedemo.StorageFeature
-import com.xieyao.inappupdatedemo.StorageFeatureImpl
 import dagger.Component
 import dagger.Module
 import dagger.Provides

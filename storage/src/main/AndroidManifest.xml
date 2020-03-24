@@ -16,7 +16,7 @@
   -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:dist="http://schemas.android.com/apk/distribution"
-          package="com.xieyao.inappupdatedemo">
+          package="com.xieyao.inappupdatedemo.storage">
     <dist:module
             dist:onDemand="true"
             dist:instant="false"

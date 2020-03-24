@@ -11,8 +11,8 @@ android {
         applicationId "com.xieyao.inappupdatedemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 10
-        versionName "1.6.2"
+        versionCode 11
+        versionName "1.6.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -134,6 +134,10 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.16'
 
     implementation 'com.android.support:multidex:1.0.3'
+
+    // be sure to also include the core dependency
+    implementation 'com.android.billingclient:billing:2.1.0'
+    implementation 'com.android.billingclient:billing-ktx:2.1.0'
 }
 
 
